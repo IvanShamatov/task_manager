@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   skip_before_action :authenticate!
 
@@ -19,7 +21,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
-    end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 end
