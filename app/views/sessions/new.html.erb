@@ -1,0 +1,22 @@
+<h1>Log in</h1>
+
+<%= form_with url: authenticate_path, local: true do |f| %>
+  <% if flash["error"] %>
+    <div id="error_explanation">
+      <h3><%= flash["error"] %></h3>
+    </div>
+  <% end %>
+
+  <div class="fields">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password, type: :password %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'log in' %>
+  </div>
+<% end %>
